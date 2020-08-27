@@ -20,7 +20,7 @@ import br.com.casadocodigo.loja.models.TipoPreco;
 public class CarrinhoComprasController {
 	
 	@Autowired
-	private ProdutoDAO produtoDAO;
+	private ProdutoDAO produtoDao;
 	
 	@Autowired
 	private CarrinhoCompras carrinho;
@@ -38,8 +38,15 @@ public class CarrinhoComprasController {
 	}
 	
 	private CarrinhoItem criaItem(Integer produtoId, TipoPreco tipoPreco) {
-		Produto produto = this.produtoDAO.find(produtoId);
+		Produto produto = this.produtoDao.find(produtoId); 
 		CarrinhoItem carrinhoItem = new CarrinhoItem(produto, tipoPreco);
 		return carrinhoItem;
+	}
+	
+	@RequestMapping("/remover")
+	public ModelAndView remover(Integer produtoId, TipoPreco tipoPreco) {
+		carrinho.remover(produtoId, tipoPreco);
+		
+		return new ModelAndView("redirect:/carrinho");
 	}
 }

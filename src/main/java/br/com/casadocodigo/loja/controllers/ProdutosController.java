@@ -37,7 +37,6 @@ public class ProdutosController {
 		binder.addValidators(new ProdutoValidation());
 
 	}
-
 	@RequestMapping("/form")
 	public ModelAndView form(Produto produto) {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");

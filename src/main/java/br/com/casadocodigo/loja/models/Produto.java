@@ -96,10 +96,8 @@ public class Produto {
 		return true;
 	}
 	public BigDecimal precoPara(TipoPreco tipoPreco) {
-		return precos.stream().filter(preco -> preco.getTipo().equals(tipoPreco))
-				.findFirst().get().getValor();
+	    return precos.stream()
+	        .filter(preco -> preco.getTipo().equals(tipoPreco))
+	            .findFirst().get().getValor();
 	}
-	
-	
-	
 }
