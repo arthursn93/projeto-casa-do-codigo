@@ -3,6 +3,7 @@ package br.com.casadocodigo.loja.models;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -20,7 +21,14 @@ public class Produto {
 	private String titulo;
 	private String descricao;
 	private int paginas;
+	private TipoPreco tipoPreco;
 	
+	public TipoPreco getTipoPreco() {
+		return tipoPreco;
+	}
+	public void setTipoPreco(TipoPreco tipoPreco) {
+		this.tipoPreco = tipoPreco;
+	}
 	@DateTimeFormat
 	private Calendar dataLancamento;
 	
@@ -95,9 +103,12 @@ public class Produto {
 			return false;
 		return true;
 	}
-	public BigDecimal precoPara(TipoPreco tipoPreco) {
-	    return precos.stream()
-	        .filter(preco -> preco.getTipo().equals(tipoPreco))
-	            .findFirst().get().getValor();
-	}
+	 public BigDecimal precoPara(TipoPreco tipoPreco) {
+	        //return precos.stream().filter(preco -> preco.getTipo().equals(tipoPreco)).findFirst().get().getValor();
+	        Optional<Preco> optional = precos.stream().filter(preco -> preco.getTipo().equals(tipoPreco)).findFirst();
+	        if(optional.isPresent()) {
+	        	return optional.get().getValor();
+	        }
+	        return null;
+	    }
 }

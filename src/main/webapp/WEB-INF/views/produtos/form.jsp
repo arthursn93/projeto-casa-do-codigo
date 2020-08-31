@@ -8,8 +8,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais -
-	Casa do Código</title>
+<title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
+
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+
+<c:url value="/resources/css" var="cssPath"/>
+<link rel="stylesheet" href="${cssPath}/bootstrap.css">
+<link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
+
 </head>
 <body>
 <form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST" commandName="produto" enctype="multipart/form-data">

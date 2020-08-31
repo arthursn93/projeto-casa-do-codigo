@@ -8,11 +8,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
+
+<c:url value="/resources/css" var="cssPath"/>
+<link rel="stylesheet" href="${cssPath}/bootstrap.css">
+<link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
+
 </head>
 <body>
 	
 	<h1>Lista de Produtos</h1>
 	<div>${sucesso }</div>
+	<div>${falha }</div>
 	<table>
 		<tr>
 			<td>Título</td>

@@ -79,13 +79,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${item.key.produto.titulo}" var="item"> <!--carrinhoCompras.itens-->
+				<c:forEach items="${carrinhoCompras.itens}" var="item"> 
 					<tr>
 						<td class="cart-img-col"><img src="http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_large.png?v=1435245145"
 							width="71px" height="100px" />
 						</td>
-						<td class="item-title">${item.produto.titulo }</td> <!--carrinhoCompras.itens-->
-						<td class="numeric-cell">${item.preco }</td>
+						<td class="item-title">${item.produto.titulo }</td> 
+						<td class="numeric-cell">${item.preco }</td> <!-- item.preco -->
 						<td class="quantity-input-cell">
 							<input type="number" min="0" id="quantidade" name="quantidade" 
 							value="${carrinhoCompras.getQuantidade(item) }" /></td>
@@ -106,7 +106,7 @@
 					<input type="submit" class="checkout" name="checkout" value="Finalizar compra" />
 					</form>					
 					</td>
-					<td class="numeric-cell">${total.produto.titulo}</td> <!--carrinhoCompras.itens-->
+					<td class="numeric-cell">${carrinhoCompras.total}</td> 
 					<td></td>
 				</tr>
 			</tfoot>

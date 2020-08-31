@@ -27,10 +27,7 @@ public class CarrinhoCompras implements Serializable {
 		}
 		return itens.get(item);
 	}
-	public Integer getQuantidade() {
-		return this.itens.values().stream().reduce(0, 
-				(proximo, acumulador) -> proximo + acumulador);
-	}
+	
 	public BigDecimal getTotal(CarrinhoItem item) {
 		return item.getTotal(getQuantidade(item));
 	}
@@ -39,10 +36,14 @@ public class CarrinhoCompras implements Serializable {
 		for (CarrinhoItem item : itens.keySet()) {
 			total = total.add(getTotal(item));
 		}
-		return total ;
+		return total;
 	}	
 	public Collection<CarrinhoItem> getItens() {
 		return itens.keySet();
+	}
+	
+	public int getQuantidade() {
+		return itens.values().stream().reduce(0, (proximo, acumulador) -> proximo + acumulador);
 	}
 	
 	public void remover(Integer produtoId, TipoPreco tipoPreco) {
