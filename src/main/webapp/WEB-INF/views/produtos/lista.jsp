@@ -20,7 +20,6 @@
 		margin: 0px;
 		padding: 0px;
 	}
-		
 </style>
 
 </head>
@@ -38,6 +37,9 @@
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="${s:mvcUrl('PC#form').build() }">Cadastro de Produtos</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="<c:url value="/logout"/>">Sair</a>
 	      </li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">

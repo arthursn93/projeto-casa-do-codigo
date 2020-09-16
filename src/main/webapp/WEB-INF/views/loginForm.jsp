@@ -30,8 +30,7 @@
 	
 	<div class="container">
 	<h1>Login - Casa do Código</h1>
-	<form:form servletRelativeAction="/login" method="POST" 
-		commandName="produto" enctype="multipart/form-data">
+	<form:form servletRelativeAction="/login" method="POST">
 		<div class="form-group">
 			<label>E-mail: </label> 
 			<input name="username" type="text" class="form-control"/>

@@ -13,7 +13,7 @@
 <c:url value="/resources/css" var="cssPath"/>
 <link rel="stylesheet" href="${cssPath}/bootstrap.css">
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
-
+<!--  -->
 <style type="text/css">
 
 	html, body{
@@ -40,6 +40,9 @@
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="${s:mvcUrl('PC#form').build() }">Cadastro de Produtos</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="<c:url value="/logout"/>">Sair</a>
 	      </li>
 	    </ul>
 	  </div>
