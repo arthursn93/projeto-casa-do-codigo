@@ -4,6 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>	
 
+
+
 <tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile e muito mais...">
 
 <section id="index-section" class="container middle">
