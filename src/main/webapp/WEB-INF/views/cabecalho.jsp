@@ -12,13 +12,24 @@
                 <ul class="clearfix">
                     <li>
                         <a href="${s:mvcUrl('CCC#itens').build()}" rel="nofollow"> 
-                            <fmt:message key="menu.carrinho" />
+                            <s:message code="menu.carrinho" arguments="${carrinhoCompras.quantidade }" />
                         </a>
                     </li>
                     <li>
                     	<a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">
                     	<fmt:message key="menu.sobre" />
                     	</a>
+                    </li>
+                    <li>
+                    	<a href="?locale=pt_BR" rel="nofollow">
+                    	<fmt:message key="menu.pt" />
+                    	</a>
+                    </li>
+                    <li>
+                    	<a href="?locale=en_US" rel="nofollow">
+                    	<fmt:message key="menu.en" />
+                    	</a>
+                    </li>
                     <li>
 	                    <a href="/pages/perguntas-frequentes" rel="nofollow">
 	                    <fmt:message key="menu.perguntas_frequentes" />
