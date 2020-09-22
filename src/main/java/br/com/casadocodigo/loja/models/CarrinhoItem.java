@@ -66,7 +66,7 @@ public class CarrinhoItem implements Serializable{
 	public BigDecimal getTotal(int quantidade) {
 		if(quantidade == 0 || this.getPreco() == null) {
 			return BigDecimal.ZERO;
-		}
+		}			
 		return this.getPreco().multiply(new BigDecimal(quantidade));
 	}
 }

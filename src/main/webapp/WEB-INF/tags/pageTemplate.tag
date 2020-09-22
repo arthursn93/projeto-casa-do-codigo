@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="ISO-8859-1"%>
 <%@attribute name="titulo" required="true" %>
 <%@attribute name="bodyClass" required="false" %>
-<%@attribute name="extraScripts" fragment="true" %>s
+<%@attribute name="extraScripts" fragment="true" %>
 
 <!DOCTYPE html>
 <html>
