@@ -72,5 +72,5 @@ public class ProdutosController {
 	    Produto produto = produtoDao.find(id);
 	    modelAndView.addObject("produto", produto);
 	    return modelAndView;
-	}
+	}	
 }

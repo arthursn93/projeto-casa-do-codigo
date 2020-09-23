@@ -22,13 +22,13 @@ public class JPAConfiguration {
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		factoryBean.setJpaVendorAdapter(vendorAdapter);	
 		factoryBean.setDataSource(dataSource);
 		factoryBean.setJpaProperties(aditionalPropeties());
-		factoryBean.setJpaVendorAdapter(vendorAdapter);	
 		return factoryBean;
 	}
 	
-	@Bean
+	
 	public Properties aditionalPropeties() {
 		Properties props = new Properties();
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
