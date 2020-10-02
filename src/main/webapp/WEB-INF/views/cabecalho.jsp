@@ -5,7 +5,7 @@
 <header id="layout-header">
     <div class="clearfix container">
         <a href="${s:mvcUrl('HC#index').build()}" id="logo">
-        	<img src="https://cdn.rawgit.com/alura-cursos/spring-mvc-i-criando-aplicacoes-web-master/master/src/main/webapp/resources/imagens/cdc-logo.svg" />
+        	
         </a>
         <div id="header-content">
             <nav id="main-nav">

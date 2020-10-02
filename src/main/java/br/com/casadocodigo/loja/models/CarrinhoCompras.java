@@ -16,7 +16,12 @@ import org.springframework.web.context.WebApplicationContext;
 public class CarrinhoCompras implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	private Map<CarrinhoItem, Integer> itens = new LinkedHashMap<>();
+	
+	public Collection<CarrinhoItem> getItens() {
+		return itens.keySet();
+	}
 	
 	public void add(CarrinhoItem item) {
 		itens.put(item, getQuantidade(item) + 1);
@@ -42,13 +47,10 @@ public class CarrinhoCompras implements Serializable {
 		}
 		return total;
 	}	
-	public Collection<CarrinhoItem> getItens() {
-		return itens.keySet();
-	}
 	
 	public void remover(Integer produtoId, TipoPreco tipoPreco) {
 		Produto produto = new Produto();
 		produto.setId(produtoId);
 		itens.remove(new CarrinhoItem(produto, tipoPreco));
-	}
+	}		
 }

@@ -36,12 +36,12 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th class="cart-img-col"></th>
+					<th class="cart-img-col">Livro</th>
 					<th width="65%">Item</th>
 					<th width="10%">Preço</th>
 					<th width="10%">Quantidade</th>
 					<th width="10%">Total</th>
-					<th width="5%"></th>
+					<th width="5%">Excluir</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,7 +57,7 @@
 							value="${carrinhoCompras.getQuantidade(item) }" /></td>
 						<td class="numeric-cell">${carrinhoCompras.getTotal(item) }</td>
 						<td class="remove-item">
-							<form:form action="${s:mvcUrl('CCC#remover').arg(0, item.produto.id).arg(1, item.tipoPreco).build()}" method="POST"> <!-- item.produto.tipoPreco -->
+							<form:form action="${s:mvcUrl('CCC#remover').arg(0,item.produto.id).arg(1,item.produto.tipoPreco).build()}" method="POST"> <!-- item.produto.tipoPreco -->
 								<input type="image" src="${contextPath }/resources/imagens/excluir.png" 
 									alt="Excluir" title="Excluir" />
 							</form:form>	

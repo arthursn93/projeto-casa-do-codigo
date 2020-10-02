@@ -7,7 +7,7 @@
 
 <tags:pageTemplate titulo="${produto.titulo }">
 	
-	<article id="${produto.id} }" itemscope> 
+	<article id="${produto.id} " itemscope> 
 		<header id="product-highlight" class="clearfix">
 			<div id="product-overview" class="container">
 				<img width="280px" height="395px" src="http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_large.png?v=1435245145"
@@ -21,7 +21,7 @@
 		</header>
 
 		<section class="buy-options clearfix">
-			<form:form servletRelativeAction="/carrinho/add" method="post" cssClass="container">
+			<form:form servletRelativeAction="${contextPath}/carrinho/add" method="post" cssClass="container">
 				<input type="hidden" value="${produto.id }" name="produtoId" >
 				<ul id="variants" class="clearfix">
 					<c:forEach items="${produto.precos }" var="preco">
