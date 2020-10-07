@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>	
 
-
+<c:url value="/" var="contextPath" />
 
 <tags:pageTemplate titulo="Seu carrinho de compras">
 
@@ -53,12 +53,11 @@
 						<td class="item-title">${item.produto.titulo }</td> 
 						<td class="numeric-cell">${item.preco }</td> <!-- item.preco -->
 						<td class="quantity-input-cell">
-							<input type="number" min="0" id="quantidade" name="quantidade" 
-							value="${carrinhoCompras.getQuantidade(item) }" /></td>
+							<input type="number" min="0" id="quantidade" name="quantidade" value="${carrinhoCompras.getQuantidade(item) }" /></td>
 						<td class="numeric-cell">${carrinhoCompras.getTotal(item) }</td>
 						<td class="remove-item">
 							<form:form action="${s:mvcUrl('CCC#remover').arg(0,item.produto.id).arg(1,item.produto.tipoPreco).build()}" method="POST"> <!-- item.produto.tipoPreco -->
-								<input type="image" src="${contextPath }/resources/imagens/excluir.png" 
+								<input type="image" src="${contextPath }resources/imagens/excluir.png" 
 									alt="Excluir" title="Excluir" />
 							</form:form>	
 						</td>
