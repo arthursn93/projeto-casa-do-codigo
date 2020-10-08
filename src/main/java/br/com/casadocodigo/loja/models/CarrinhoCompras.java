@@ -35,6 +35,7 @@ public class CarrinhoCompras implements Serializable {
 	
 	public int getQuantidade() {
 		return itens.values().stream().reduce(0, (proximo, acumulador) -> proximo + acumulador);
+		//return itens.size();
 	}
 	
 	public BigDecimal getTotal(CarrinhoItem item) {
@@ -51,6 +52,11 @@ public class CarrinhoCompras implements Serializable {
 	public void remover(Integer produtoId, TipoPreco tipoPreco) {
 		Produto produto = new Produto();
 		produto.setId(produtoId);
-		itens.remove(new CarrinhoItem(produto, tipoPreco));
+		this.itens.remove(new CarrinhoItem(produto, tipoPreco));
 	}		
+	
+	public void limpa() {
+		this.itens.clear();
+	}
+
 }

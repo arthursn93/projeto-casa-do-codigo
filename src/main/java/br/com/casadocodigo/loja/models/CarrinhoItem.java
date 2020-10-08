@@ -33,8 +33,8 @@ public class CarrinhoItem implements Serializable{
 
 	public void setTipoPreco(TipoPreco tipoPreco) {
 		this.tipoPreco = tipoPreco;
-	}
-
+	}	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -61,10 +61,10 @@ public class CarrinhoItem implements Serializable{
 		if (tipoPreco != other.tipoPreco)
 			return false;
 		return true;
-	}	
-	
+	}
+
 	public BigDecimal getTotal(int quantidade) {
-		if(quantidade != 0 || this.getPreco() != null) {
+		if(quantidade == 0 || this.getPreco() == null) {
 			return BigDecimal.ZERO;
 		}			
 		return this.getPreco().multiply(new BigDecimal(quantidade));

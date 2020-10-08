@@ -50,16 +50,16 @@
 						<td class="cart-img-col"><img src="http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_large.png?v=1435245145"
 							width="71px" height="100px" />
 						</td>
-						<td class="item-title">${item.produto.titulo }</td> 
+						<td class="item-title">${item.produto.titulo }</td> <!-- item.produto.titulo -->
 						<td class="numeric-cell">${item.preco }</td> <!-- item.preco -->
 						<td class="quantity-input-cell">
 							<input type="number" min="0" id="quantidade" name="quantidade" value="${carrinhoCompras.getQuantidade(item) }" /></td>
 						<td class="numeric-cell">${carrinhoCompras.getTotal(item) }</td>
 						<td class="remove-item">
-							<form:form action="${s:mvcUrl('CCC#remover').arg(0,item.produto.id).arg(1,item.produto.tipoPreco).build()}" method="POST"> <!-- item.produto.tipoPreco -->
-								<input type="image" src="${contextPath }resources/imagens/excluir.png" 
-									alt="Excluir" title="Excluir" />
-							</form:form>	
+							
+						<form:form action="carrinho/remover?produtoId=${item.produto.id }&tipoPreco=${item.tipoPreco }" method="POST" >
+						<input type="image" src="${contextPath }resources/imagens/excluir.png" alt="Excluir" title="Excluir" />
+						</form:form>	
 						</td>
 					</tr>
 				</c:forEach>
